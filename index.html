@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Academy Interns | Learning. Building. Growing.</title>
+    <meta name="description" content="A portfolio-style showcase website representing the elite cohort of interns at Toko Academy.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030014;
+        }
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(3, 0, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Custom Animations */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.4; }
+            50% { transform: scale(1.1) translate(30px, -50px); opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 10s infinite ease-in-out;
+        }
+        .animate-pulse-slow-reverse {
+            animation: pulse-slow 12s infinite ease-in-out reverse;
+        }
+    </style>
+</head>
+<body class="text-gray-300 overflow-x-hidden antialiased">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-600/10 blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute bottom-[20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-purple-600/10 blur-[140px] animate-pulse-slow-reverse"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl px-6 lg:px-8 h-20 flex items-center justify-between mx-auto">
+            <a href="#" class="flex items-center gap-2 font-bold text-xl text-white tracking-tight">
+                <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">TOKO</span>
+                <span class="text-gray-400 font-light text-sm tracking-widest border-l border-gray-800 pl-2">ACADEMY</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#interns" class="hover:text-white transition-colors">The Cohort</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#timeline" class="hover:text-white transition-colors">Journey</a>
+                <a href="#activities" class="hover:text-white transition-colors">Activities</a>
+                <a href="#contact" class="px-4 py-2 rounded-full glass-card hover:bg-white/10 text-white transition-all text-xs tracking-wide">Get in Touch</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none cursor-pointer">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-6 flex flex-col gap-2 text-center">
+            <a href="#about" class="hover:text-white text-gray-400 py-2 transition-colors">About</a>
+            <a href="#interns" class="hover:text-white text-gray-400 py-2 transition-colors">The Cohort</a>
+            <a href="#skills" class="hover:text-white text-gray-400 py-2 transition-colors">Skills</a>
+            <a href="#timeline" class="hover:text-white text-gray-400 py-2 transition-colors">Journey</a>
+            <a href="#activities" class="hover:text-white text-gray-400 py-2 transition-colors">Activities</a>
+            <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2.5 rounded-xl mt-2 block font-medium">Get in Touch</a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        <div class="max-w-5xl px-6 text-center z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs text-blue-400 font-medium mb-6 tracking-wider uppercase">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                2026 Cohort Showcase
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Toko Academy <br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Interns</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-semibold text-gray-400 tracking-wide mb-4">
+                Learning. Building. Growing.
+            </p>
+            <p class="text-md md:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                A community of aspiring developers, innovators, and technology enthusiasts gaining practical experience through the Toko Academy Internship Program.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#interns" class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:opacity-90 shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center">
+                    Meet The Interns
+                </a>
+                <a href="#timeline" class="px-8 py-4 rounded-full glass-card text-white font-medium hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
+                    Our Journey <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+    </header>
+
+    <section id="about" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-gray-900">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-xs uppercase font-semibold text-purple-400 tracking-widest mb-3">The Program Blueprint</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">About The Internship</h2>
+                <p class="text-gray-400 text-lg leading-relaxed font-light mb-8">
+                    The Toko Academy Internship is an elite incubator designed to bridge the gap between classroom theory and real-world software engineering production. We focus on hyper-accelerated growth through building high-stakes applications.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4">
+                            <i data-lucide="target" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">Skill Development</h4>
+                        <p class="text-sm text-gray-400 font-light">Deep dives into full-stack modern frameworks, AI operations, and modern paradigms.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4">
+                            <i data-lucide="users-2" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">Collaboration</h4>
+                        <p class="text-sm text-gray-400 font-light">Cross-functional product squads simulating professional agile environments.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl"></div>
+                    <div class="flex gap-4 items-start">
+                        <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2">Mentorship Network</h3>
+                            <p class="text-gray-400 font-light">Direct engineering guidance from global tech leads, offering industry code architectural critiques and systemic scaling methods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-gray-900">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <p class="text-xs uppercase font-semibold text-blue-400 tracking-widest mb-3">Let's Build Together</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">
+                Contact <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Us</span>
+            </h2>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <form action="{% url 'index' %}" method="POST" class="glass-card p-8 md:p-12 rounded-3xl space-y-6">
+                {% csrf_token %}
+
+                { %if messages %}
+                    {  % for message in messages %}
+                    <div class="p-4 rounded-xl text-sm {% if  message.tags == 'sucess' %}bg-green-500/10 
+                    text-green-400 border border-green-500/20{% else %}bg-red-500/10 text-red-400 border border-red-500/20{% endif %}">
+                        {{ message }}
+
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex flex-col">
+                        <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" placeholder="Alex Alexus" required 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" placeholder="alex@company.com" required 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 transition-all">
+                    </div>
+                </div>
+    
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex flex-col">
+                        <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Mobile Number</label>
+                        <input type="tel" placeholder="+1 (234) 90-2834" required 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Subject</label>
+                        <input type="text" placeholder="Partnership / Project Inquiry" required 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 transition-all">
+                    </div>
+                </div>
+    
+                <div class="flex flex-col">
+                    <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Message</label>
+                    <textarea rows="6" placeholder="Tell us how we can collaborate/contribute..." required 
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all resize-none"></textarea>
+                </div>
+    
+                <div class="flex justify-end pt-2">
+                    <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium text-sm tracking-wide shadow-lg shadow-blue-500/20 hover:opacity-95 hover:scale-[1.01] transition-all cursor-pointer">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide Vector Icons
+        lucide.createIcons();
+
+        // Responsive Mobile Menu Handler
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu automatically on link intercept click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
